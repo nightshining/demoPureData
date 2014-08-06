@@ -1,0 +1,54 @@
+#N canvas 486 364 897 595 10;
+#X obj 289 496 dac~;
+#X obj 294 411 osc~ 400;
+#X obj 294 438 *~ 0.2;
+#X text 684 63 A = C4 \; B = D4 \; C = Eb4 \; D = F#4 \; E = G4 \;
+F = Ab4 \; G = B4 \; H = C5 \; I = D5 \; J = Eb5 \; K = F#5 \; L =
+G5 \; M = Ab5 \; N = B5 \; O = C6 \; P = D6 \; Q = Eb6 \; R = F#6 \;
+S = G6 \; T = Ab6 \; U = B7 \; V = C7 \; W = D7 \; X = Eb7 \; Y = Eb3
+\; Z = F#3 \;;
+#X text 771 65 1 \, 36 \; 2 \, 38 \; 3 \, 39 \; 4 \, 42 \; 5 \, 43
+\; 6 \, 44 \; 7 \, 35 \; 8 \, 48 \; 9 \, 50 \; 10 \, 51 \; 11 \, 54
+\; 12 \, 55 \; 13 \, 56 \; 14 \, 47 \; 15 \, 60 \; 16 \, 62 \; 17 \,
+63 \; 18 \, 66 \; 19 \, 67 \; 20 \, 68 \; 21 \, 71 \; 22 \, 72 \; 23
+\, 73 \; 24 \, 75 \; 25 \, 27 \; 26 \, 30 \;;
+#X text 760 46 Coll:MIDI;
+#X obj 294 161 metro 400;
+#X obj 365 80 receive tempo;
+#X text 367 134 ofMap 250 - 1000;
+#X obj 294 196 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 433 454 random 26;
+#X floatatom 294 332 5 0 0 0 - - -;
+#X text 436 489 Midi Numbers;
+#X obj 294 363 mtof;
+#X obj 433 511 coll;
+#C restore;
+#X msg 509 453 write scale;
+#X msg 601 455 read scale;
+#X obj 294 80 r metroOn;
+#X obj 294 118 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 600 419 r read;
+#X obj 294 232 random 60;
+#X text 490 512 Coll object is doesnt work right;
+#X obj 369 390 square~;
+#X obj 369 415 *~ 0.2;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 2 0 0 1;
+#X connect 6 0 9 0;
+#X connect 7 0 6 1;
+#X connect 9 0 20 0;
+#X connect 10 0 14 0;
+#X connect 11 0 13 0;
+#X connect 13 0 1 0;
+#X connect 13 0 22 0;
+#X connect 15 0 14 0;
+#X connect 16 0 14 0;
+#X connect 17 0 18 0;
+#X connect 18 0 6 0;
+#X connect 19 0 16 0;
+#X connect 20 0 11 0;
+#X connect 22 0 23 0;
+#X connect 23 0 2 0;

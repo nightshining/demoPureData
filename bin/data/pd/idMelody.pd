@@ -1,0 +1,44 @@
+#N canvas 1056 116 653 702 10;
+#X obj 180 467 dac~;
+#X text 461 65 A = C4 \; B = D4 \; C = Eb4 \; D = F#4 \; E = G4 \;
+F = Ab4 \; G = B4 \; H = C5 \; I = D5 \; J = Eb5 \; K = F#5 \; L =
+G5 \; M = Ab5 \; N = B5 \; O = C6 \; P = D6 \; Q = Eb6 \; R = F#6 \;
+S = G6 \; T = Ab6 \; U = B7 \; V = C7 \; W = D7 \; X = Eb7 \; Y = Eb3
+\; Z = F#3 \;;
+#X text 548 67 1 \, 36 \; 2 \, 38 \; 3 \, 39 \; 4 \, 42 \; 5 \, 43
+\; 6 \, 44 \; 7 \, 35 \; 8 \, 48 \; 9 \, 50 \; 10 \, 51 \; 11 \, 54
+\; 12 \, 55 \; 13 \, 56 \; 14 \, 47 \; 15 \, 60 \; 16 \, 62 \; 17 \,
+63 \; 18 \, 66 \; 19 \, 67 \; 20 \, 68 \; 21 \, 71 \; 22 \, 72 \; 23
+\, 73 \; 24 \, 75 \; 25 \, 27 \; 26 \, 30 \;;
+#X text 537 48 Coll:MIDI;
+#X obj 180 430 *~ 0.5;
+#X obj 180 388 cycle~ 440;
+#X obj 180 144 metro 400;
+#X obj 251 61 receive tempo;
+#X text 253 117 ofMap 250 - 1000;
+#X obj 180 179 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 180 221 random 26;
+#X floatatom 180 315 5 0 0 0 - - -;
+#X text 183 256 Midi Numbers;
+#X obj 180 346 mtof;
+#X obj 180 278 coll;
+#C restore;
+#X msg 256 220 write scale;
+#X msg 348 222 read scale;
+#X obj 180 60 r metroOn;
+#X obj 348 175 r coll;
+#X connect 4 0 0 0;
+#X connect 4 0 0 1;
+#X connect 5 0 4 0;
+#X connect 6 0 9 0;
+#X connect 7 0 6 1;
+#X connect 9 0 10 0;
+#X connect 10 0 14 0;
+#X connect 11 0 13 0;
+#X connect 13 0 5 0;
+#X connect 14 0 11 0;
+#X connect 15 0 14 0;
+#X connect 16 0 14 0;
+#X connect 17 0 6 0;
+#X connect 18 0 16 0;
